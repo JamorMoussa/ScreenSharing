@@ -21,7 +21,6 @@ public class ScreenReciever extends Thread{
 	private void drawImage() throws ClassNotFoundException, IOException {
         
 		ImageIcon imageIcon = (ImageIcon) ois.readObject();
-        System.out.println("New image recieved");
         Image image = imageIcon.getImage();
         image = image.getScaledInstance(screen.getWidth(),screen.getHeight()
                                             ,Image.SCALE_SMOOTH);

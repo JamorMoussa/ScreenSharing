@@ -42,10 +42,7 @@ MouseMotionListener,MouseListener {
 	public void mouseMoved(MouseEvent e) {
 		
         double xScale = userScreenDim.getWidth()/screen.getWidth();
-        System.out.println("xScale: " + xScale);
         double yScale = userScreenDim.getHeight()/screen.getHeight();
-        System.out.println("yScale: " + yScale);
-        System.out.println("Mouse Moved");
         writer.println(-5);
         writer.println((int)(e.getX() * xScale));
         writer.println((int)(e.getY() * yScale));
@@ -54,7 +51,6 @@ MouseMotionListener,MouseListener {
 
 	@Override
 	public void mouseClicked(MouseEvent e) {
-        System.out.println("Mouse Pressed");
         
         writer.println(-1);
         
@@ -80,13 +76,10 @@ MouseMotionListener,MouseListener {
 	@Override
 	public void mouseReleased(MouseEvent e) {
 		
-		System.out.println("Mouse Released");
-		
         writer.println(-2);
         
         int button = e.getButton();
-		System.out.println(button);
-        
+
 		int xButton = 16;
         if (button == 3) {
             xButton = 4;
@@ -103,8 +96,6 @@ MouseMotionListener,MouseListener {
 	@Override
 	public void keyPressed(KeyEvent e) {
 		
-        System.out.println("Key Pressed");
-        
         writer.println(-3);
         writer.println(e.getKeyCode());
         writer.flush();
@@ -113,9 +104,7 @@ MouseMotionListener,MouseListener {
 
 	@Override
 	public void keyReleased(KeyEvent e) {
-        
-		System.out.println("Mouse Released");
-        
+       
 		writer.println(-4);
         writer.println(e.getKeyCode());
         writer.flush();

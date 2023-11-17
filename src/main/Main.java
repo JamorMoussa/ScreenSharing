@@ -16,7 +16,6 @@ public class Main extends JFrame{
 		
 		setSize(new Dimension(800, 500));
 		setDefaultCloseOperation(EXIT_ON_CLOSE);
-		setVisible(true);
 		setLocationRelativeTo(null);
 		
 	
@@ -28,9 +27,13 @@ public class Main extends JFrame{
 		JPanel screen = new JPanel();
 		
 		win.getContentPane().add(screen);
+		win.setVisible(true);
+		
+		System.out.println(screen.getWidth());
 		
 		try {
 			Server server = new Server(12345, screen);
+			server.acceptUsers();
 			
 		} catch (IOException e) {
 			e.printStackTrace();

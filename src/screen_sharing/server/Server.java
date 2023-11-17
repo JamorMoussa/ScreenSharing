@@ -13,6 +13,7 @@ public class Server {
 	
 	public Server(int port, JPanel screen) throws IOException {
 		server = new ServerSocket(port);
+		this.screen = screen;
 	}
 	
 	public void acceptUsers() {
@@ -23,6 +24,8 @@ public class Server {
 				while(true) {
 					try {
 						Socket user = server.accept();
+						
+						System.out.println("user is connected");
 						
 						new ScreenShare(user,screen).start();
 						
