@@ -22,7 +22,7 @@ public class ClientMain {
          Robot robot = new Robot();
          
          new ScreenSender(socket,robot,rectangle).start();
-         new ServerCmdExecution(socket,robot).start();;
+         new ServerCmdExecution(socket,robot).start();
 	}
 
 }
